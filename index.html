@@ -7,10 +7,54 @@
 		<title>erisdiscord@github</title>
 		
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/github.js"></script>
 		<script type="text/javascript" src="js/deobfuscate_email.js"></script>
+		<script type="text/javascript" src="js/lowercaps.js"></script>
 		<script type="text/javascript">
+			// function show_user_callback(json) {
+			// 	console.log(json);
+			// }
+			
+			function list_repos_callback(json) {
+				var repos = json.repositories;
+				
+				var ul_mine    = $('ul#repos_mine')
+				var ul_contrib = $('ul#repos_contrib');
+				
+				for (var i = 0, L = repos.length; i < L; ++i) {
+					var repo = repos[i];
+					
+					var li = $('<li>', document).append(
+						$('<a>', document).attr('href', repo.url).text(repo.name)
+					).append(
+						'&mdash;' + repo.description
+					);
+					
+					if (repo.homepage) {
+						li.append(
+							' ('
+						).append(
+							$('<a>', document).attr('href', repo.homepage).text('homepage')
+						).append(
+							')'
+						);
+					}
+					
+					if (repo.private || repo.name.match(/\.github\.com$/)) break;
+					else if (repo.fork)
+						ul_contrib.append(li);
+					else
+						ul_mine.append(li);
+				}
+			} // list_repos_callback
+			
 			$(document).ready(function() {
+				lowercaps();
 				deobfuscate_email();
+				
+				var gh = new GitHub(null, null);
+				// GitHub.call('user/show/erisdiscord', show_user_callback);
+				GitHub.call('repos/show/erisdiscord', list_repos_callback);
 			});
 		</script>
 		
@@ -20,26 +64,20 @@
 		
 	</head>
 	<body>
-		<h1>erisdiscord@github</h1>
+		<h1 class="lowercaps">erisdiscord@github</h1>
 		<p>Hello, World!</p>
 		
-		<h2>Projects</h2>
+		<h2 class="lowercaps">Projects</h2>
 		
-		<h3>Mine</h3>
+		<h3 class="lowercaps">Mine</h3>
 		<p>Projects I've started or that I maintain.</p>
-		<ul>
-			<li class="project"><a href="http://github.com/erisdiscord/gosu-tmx">gosu-tmx</a>,
-				being a rather generic TMX map loader for use with the
-				<a href="http://libgosu.org">Gosu</a> graphics library</li>
-		</ul>
+		<ul id="repos_mine"></ul>
 		
-		<h3>Contributed</h3>
+		<h3 class="lowercaps">Contributed</h3>
 		<p>Projects to which I've contributed.</p>
-		<ul>
-			<li class="project"><a href="http://github.com/shawn42/chipmunk-ffi">chipmunk-ffi</a></li>
-		</ul>
+		<ul id="repos_contrib"></ul>
 		
-		<h2>Contact</h2>
+		<h2 class="lowercaps">Contact</h2>
 		<p>Contact me here on GitHub or at <span class="email">eris dot discord at
 			gmail dot com</span>. Finding me elsewhere is left as an exercise for
 			the reader.</p>
