@@ -30,7 +30,7 @@
 		</script>
 		
 		<script id="profile-tmpl" type="text/html">
-			<img src="http://www.gravatar.com/avatar/{%= gravatar_id %}?s=80" alt="[gravatar]">
+			<img class="gravatar" src="http://www.gravatar.com/avatar/{%= gravatar_id %}?s=80" alt="[gravatar]">
 			<ul>
 				<li class="name"><a href="mailto:{%= email %}">{%= name %}</a></li>
 				<li class="company">{%= company %}</li>
@@ -40,9 +40,11 @@
 		</script>
 		
 		<style type="text/css" media="screen">
-			@import url('themes/dot-luv/jquery-ui-1.8.custom.css');
-			@import url('css/fonts.css');
-			@import url('css/ui.css');
+			@import url(themes/dot-luv/jquery-ui-1.8.custom.css);
+			@import url(css/layout.css);
+			@import url(css/fonts.css);
+			@import url(css/colors.css);
+			@import url(css/greebles.css);
 		</style>
 		
 	</head>

@@ -1,0 +1,12 @@
+h1, h2, h3 {
+	margin : auto;
+}
+
+h2 {
+	float : right;
+}
+
+.profile .gravatar {
+	margin : auto 3em auto auto;
+	float  : left;
+}

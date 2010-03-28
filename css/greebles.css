@@ -1,0 +1,9 @@
+h1:after {
+	content : ' \2740';
+	color   : #1b4584;
+}
+
+h3:before {
+	content : '\2766  ';
+	color   : #1b4584;
+}
