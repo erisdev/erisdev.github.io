@@ -13,7 +13,7 @@
 		
 		<script type="text/javascript">
 			$(function() {
-				$('#sections').tabs({ spinner: null })
+				$('#sections').tabs({ spinner: $('#spinner-tmpl').text() });
 				
 				GitHub.call('user/show/erisdiscord', function(data) {
 					$('#profile-tmpl').render(data.user).appendTo('#overview .profile');
@@ -23,6 +23,10 @@
 					$('#repository-tmpl').render(data.repositories).appendTo('#overview .repositories');
 				});
 			});
+		</script>
+		
+		<script id="spinner-tmpl" type="text/html">
+			Loading&hellip;
 		</script>
 		
 		<script id="repository-tmpl" type="text/html">
