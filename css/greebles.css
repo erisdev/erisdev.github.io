@@ -12,3 +12,12 @@ h3:before {
 	content : '\2766  ';
 	color   : #1b4584;
 }
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a {
+	cursor : default;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-state-processing a {
+	cursor : wait;
+}
