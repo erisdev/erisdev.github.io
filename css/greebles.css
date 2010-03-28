@@ -3,6 +3,11 @@ h1:after {
 	color   : #1b4584;
 }
 
+h2:after {
+	content : ' \00a7';
+	color   : #1b4584;
+}
+
 h3:before {
 	content : '\2766  ';
 	color   : #1b4584;
