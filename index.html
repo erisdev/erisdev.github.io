@@ -12,7 +12,16 @@
 		
 		<script type="text/javascript">
 			$(function() {
-				$('#sections').tabs({ spinner: $('#spinner-tmpl').text() });
+				$('#sections').tabs({
+					spinner: $('#spinner-tmpl').text()
+				}).bind('tabsload', function(event, ui) {
+					$(ui.panel).find('a.gist-link').each(function(i, link) {
+						var match = $(link).attr('href').match(/^http:\/\/gist\.github\.com\/(\d+)$/i);
+						GitHub.call('gist:' + match[1], function(data) {
+							$(link).replaceWith(data.div);
+						})
+					});
+				});
 				
 				GitHub.call('user/show/erisdiscord', function(data) {
 					$('#profile-tmpl').render(data.user).appendTo('#overview .profile');
@@ -21,6 +30,7 @@
 				GitHub.call('repos/show/erisdiscord', function(data) {
 					$('#repository-tmpl').render(data.repositories).appendTo('#overview .repositories');
 				});
+				
 			});
 		</script>
 		
@@ -43,6 +53,8 @@
 		</script>
 		
 		<style type="text/css" media="screen">
+			@import url(http://gist.github.com/stylesheets/gist/embed.css);
+			
 			@import url(themes/dot-luv/jquery-ui-1.8.custom.css);
 			@import url(css/layout.css);
 			@import url(css/fonts.css);
