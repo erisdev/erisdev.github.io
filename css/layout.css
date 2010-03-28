@@ -11,7 +11,12 @@ h2 {
 	float  : left;
 }
 
+.gist {
+	margin : auto;
+	width  : 80%;
+}
+
 .gist .gist-data {
 	overflow : auto;
-	max-height : 500px;
+	max-height : 300px;
 }
