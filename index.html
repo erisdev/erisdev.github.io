@@ -1,56 +1,68 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<title>erisdiscord@github</title>
 		
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/ext/coffee-script.js"></script>
+		<script type="text/javascript" src="js/ext/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/ext/jquery-ui-1.8.custom.min.js"></script>
+		<script type="text/javascript" src="js/ext/jquery.tmpl.js"></script>
+		<script type="text/javascript" src="js/ext/pretty.js"></script>
 		
-		<script type="text/javascript" src="js/github.js"></script>
-		<script type="text/javascript" src="js/deobfuscate_email.js"></script>
-		<script type="text/javascript" src="js/lowercaps.js"></script>
-		<script type="text/javascript" src="js/user_info.js"></script>
+		<script type="text/javascript" src="js/lib/github.js"></script>
 		
 		<script type="text/javascript">
-			$(document).ready(function() {
-				lowercaps();
-				deobfuscate_email();
+			$(function() {
+				$('#sections').tabs({ spinner: null })
 				
-				// GitHub.call('user/show/erisdiscord', show_user_callback);
-				GitHub.call('repos/show/erisdiscord', list_repos_callback);
+				GitHub.call('user/show/erisdiscord', function(data) {
+					$('#profile-tmpl').render(data.user).appendTo('#overview .profile');
+				});
+				
+				GitHub.call('repos/show/erisdiscord', function(data) {
+					$('#repository-tmpl').render(data.repositories).appendTo('#overview .repositories');
+				});
 			});
 		</script>
 		
-		<style type="text/css">
+		<script id="repository-tmpl" type="text/html">
+			<li><a href="{%= url %}">{%= name %}</a> &ndash; {%= description %}</li>
+		</script>
+		
+		<script id="profile-tmpl" type="text/html">
+			<img src="http://www.gravatar.com/avatar/{%= gravatar_id %}?s=80" alt="[gravatar]">
+			<ul>
+				<li class="name"><a href="mailto:{%= email %}">{%= name %}</a></li>
+				<li class="company">{%= company %}</li>
+				<li class="location">{%= location %}</li>
+				<li class="joined">joined {%= prettyDate(created_at) %}</li>
+			</ul>
+		</script>
+		
+		<style type="text/css" media="screen">
+			@import url('themes/dot-luv/jquery-ui-1.8.custom.css');
 			@import url('css/fonts.css');
 			@import url('css/ui.css');
 		</style>
 		
 	</head>
 	<body>
-		<h1 class="lowercaps">erisdiscord@github</h1>
-		<p>Hello, World!</p>
-		
-		<h2 class="lowercaps">Projects</h2>
-		
-		<h3 class="lowercaps">Mine</h3>
-		<p>Projects I've started or that I maintain.</p>
-		<ul id="repos_mine">
-			<li class="loading">loading &hellip;</li>
-		</ul>
-		
-		<h3 class="lowercaps">Contributed</h3>
-		<p>Projects to which I've contributed.</p>
-		<ul id="repos_contrib">
-			<li class="loading">loading &hellip;</li>
-		</ul>
-		
-		<h2 class="lowercaps">Contact</h2>
-		<p>Contact me here on GitHub or at <span class="email">eris dot discord at
-			gmail dot com</span>. Finding me elsewhere is left as an exercise for
-			the reader.</p>
+		<h1>erisdiscord@github</h1>
+		<div id="sections">
+			<ul>
+				<li><a href="#overview">overview</a></li>
+				<li><a href="projects/gosu-tmx" title="gosu-tmx">gosu-tmx</a></li>
+			</ul>
+			
+			<div id="overview">
+				<h2>overview</h2>
+				<h3>profile</h3>
+				<div class="profile"></div>
+				<h3>repositories</h3>
+				<ul class="repositories"></ul>
+			</div>
+			
+		</div>
 		
 	</body>
 </html>

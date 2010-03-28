@@ -42,11 +42,3 @@ pre {
 	text-decoration : none;
 	color : #888;
 }
-
-.lowercaps {
-	text-transform : lowercase;
-}
-
-.lowercaps .cap {
-	font-size: 150%;
-}

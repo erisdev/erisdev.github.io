@@ -1,4 +1,11 @@
-.loading {
-	display    : block;
-	list-style : none;
+img:not([src]) {
+	background-image    : url(../images/spinner.gif);
+	background-position : center;
+}
+.spinner {
+	display : block;
+	width 
+	
+	background-image    : url(../images/spinner.gif);
+	background-position : center;
 }
