@@ -13,6 +13,7 @@
 		<script type="text/javascript">
 			$(function() {
 				$('#sections').tabs({
+					cache: true,
 					spinner: $('#spinner-tmpl').text()
 				}).bind('tabsload', function(event, ui) {
 					$(ui.panel).find('a.gist-link').each(function(i, link) {
