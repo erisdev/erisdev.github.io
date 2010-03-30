@@ -16,13 +16,3 @@ h2 {
 	margin : auto 3em auto auto;
 	float  : left;
 }
-
-.gist {
-	margin : auto;
-	width  : 80%;
-}
-
-.gist .gist-data {
-	overflow : auto;
-	max-height : 300px;
-}
