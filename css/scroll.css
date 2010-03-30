@@ -1,0 +1,36 @@
+::-webkit-scrollbar {
+	background-image  : url(../themes/dot-luv/images/ui-bg_diagonals-thick_15_0b3e6f_40x40.png);
+	background-color  : #111111;
+	
+	-webkit-border-radius : 4px;
+}
+
+::-webkit-scrollbar:disabled {
+	display : none;
+}
+
+::-webkit-scrollbar-button {
+	display : none;
+}
+
+::-webkit-scrollbar-thumb {
+	border : 1px solid #333333;
+	
+	background-image  : url(../themes/dot-luv/images/ui-bg_dots-small_20_333333_2x2.png);
+	background-color  : #00498f;
+	
+	-webkit-border-radius : 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	border : 1px solid #222222;
+	
+	background-image : url(../themes/dot-luv/images/ui-bg_dots-small_40_00498f_2x2.png);
+}
+
+::-webkit-scrollbar-thumb:active {
+	border : 1px solid #096ac8;
+	
+	background-image : none;
+	background-color : #292929;
+}
