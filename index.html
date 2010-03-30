@@ -68,7 +68,10 @@
 		</script>
 		
 		<script id="tweet-tmpl" type="text/html">
-			<li>{%= autolink(text) %}</li>
+			<li id="tweet_{%= id %}">
+				{%= autolink(text) %}
+				(<a href="http://twitter.com/{%= user.screen_name %}/status/{%= id %}">view</a>)
+			</li>
 		</script>
 		
 		<style type="text/css" media="screen">
