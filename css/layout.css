@@ -6,6 +6,12 @@ h2 {
 	float : right;
 }
 
+.column {
+	float : left;
+	clear : right;
+	width : 50%;
+}
+
 .profile .gravatar {
 	margin : auto 3em auto auto;
 	float  : left;

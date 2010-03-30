@@ -6,11 +6,15 @@
 		<script type="text/javascript" src="js/ext/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/ext/jquery-ui-1.8.custom.min.js"></script>
 		<script type="text/javascript" src="js/ext/jquery.tmpl.js"></script>
+		<script type="text/javascript" src="js/ext/jquery.jtwitter.min.js"></script>
 		<script type="text/javascript" src="js/ext/showdown.js"></script>
 		
 		<script type="text/javascript" src="js/lib/github.js"></script>
 		
 		<script type="text/javascript">
+			var TWITTER_USER = 'erisdev';
+			var GITHUB_USER  = 'erisdiscord';
+			
 			$(function() {
 				$('#sections').tabs({
 					cache: true,
@@ -24,15 +28,26 @@
 					});
 				});
 				
-				GitHub.call('user/show/erisdiscord', function(data) {
-					$('#profile-tmpl').render(data.user).appendTo('#overview .profile');
+				GitHub.call('user/show/' + GITHUB_USER, function(data) {
+					$('#profile-tmpl').render(data.user).appendTo($('#overview .profile').empty());
 				});
 				
-				GitHub.call('repos/show/erisdiscord', function(data) {
-					$('#repository-tmpl').render(data.repositories).appendTo('#overview .repositories');
+				GitHub.call('repos/show/' + GITHUB_USER, function(data) {
+					$('#repository-tmpl').render(data.repositories).appendTo($('#overview .repositories').empty());
 				});
+				
+				$.jTwitter(TWITTER_USER, function(tweets) {
+					$('#tweet-tmpl').render(tweets).appendTo($('#overview .twitter').empty());
+				})
 				
 			});
+			
+			function autolink(text) {
+				return text.replace(
+					/https?:\/\/(?:\w+:{0,1}\w*@)?\S+(?::[0-9]+)?(\/|\/[\w#!:.?+=&%@!\-\/])?/ig,
+					'<a href="$&">$&</a>'
+				);
+			}
 		</script>
 		
 		<script id="spinner-tmpl" type="text/html">
@@ -50,6 +65,10 @@
 				<li class="company">{%= company %}</li>
 				<li class="location">{%= location %}</li>
 			</ul>
+		</script>
+		
+		<script id="tweet-tmpl" type="text/html">
+			<li>{%= autolink(text) %}</li>
 		</script>
 		
 		<style type="text/css" media="screen">
@@ -71,12 +90,32 @@
 				<li><a href="projects/gosu-tmx" title="gosu-tmx">gosu-tmx</a></li>
 			</ul>
 			
+			<!-- begin overview -->
 			<div id="overview">
 				<h2>overview</h2>
-				<h3>profile</h3>
-				<div class="profile"></div>
-				<h3>repositories</h3>
-				<ul class="repositories"></ul>
+				
+				<div class="column">
+					<h3>profile</h3>
+					<div class="profile">
+						<a href="http://github.com/erisdiscord/">my github profile</a>
+					</div>
+					
+					<h3>repositories</h3>
+					<ul class="repositories">
+						<li><a href="http://github.com/erisdiscord/repositories/">repositories</a></li>
+					</ul>
+				</div>
+					
+				<div class="column">
+					<h3>twitter</h3>
+					<ul class="twitter">
+					</ul>
+				</div>
+				
+			</div>
+			<!-- end overview -->
+			
+			<div id="gosu-tmx">
 			</div>
 			
 		</div>
