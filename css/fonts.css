@@ -21,24 +21,6 @@ h1 {
 	font-size : 24pt;
 }
 
-code, pre {
-	font-family : 'Monaco', monospace;
-}
-
-pre {
-	margin : 1em;
-}
-
-:link, :visited {
-	text-decoration : underline;
-	color : inherit;
-}
-
-:visited {
-	text-decoration : none;
-	color : #888;
-}
-
 .twitter {
 	font-size : small;
 }
