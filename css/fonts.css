@@ -1,5 +1,6 @@
 body {
 	font-family : 'Optima', sans-serif;
+	font-size   : 13pt;
 }
 
 h1, h2, h3 {
@@ -21,6 +22,7 @@ h1 {
 	font-size : 24pt;
 }
 
-.twitter {
-	font-size : small;
+/* don't want this huge, mang */
+.ui-widget-content {
+	font-size : inherit;
 }
