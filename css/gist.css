@@ -25,7 +25,7 @@
 
 		.gist .gist-file .gist-data {
 			overflow   : auto;
-			max-height : 300px;
+			max-height : 400px;
 			
 			font-family : Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 			word-wrap   : normal;
