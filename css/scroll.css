@@ -2,8 +2,11 @@
 	background-image  : url(../themes/dot-luv/images/ui-bg_diagonals-thick_15_0b3e6f_40x40.png);
 	background-color  : #111111;
 	
-	-webkit-border-radius : 4px;
+	-webkit-border-radius : 1em;
 }
+
+::-webkit-scrollbar:vertical   { width : 2em }
+::-webkit-scrollbar:horizontal { height : 2em }
 
 ::-webkit-scrollbar:disabled {
 	display : none;
@@ -19,7 +22,7 @@
 	background-image  : url(../themes/dot-luv/images/ui-bg_dots-small_20_333333_2x2.png);
 	background-color  : #00498f;
 	
-	-webkit-border-radius : 4px;
+	-webkit-border-radius : 1em;
 }
 
 ::-webkit-scrollbar-thumb:hover {
