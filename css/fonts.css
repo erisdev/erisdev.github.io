@@ -22,7 +22,12 @@ h1 {
 	font-size : 24pt;
 }
 
-/* don't want this huge, mang */
-.ui-widget-content {
-	font-size : inherit;
+/* jQuery, please obey the page styles here */
+.ui-widget, .ui-widget-content {
+	font-family : inherit;
+	font-size   : inherit;
+}
+
+#credits {
+	font-family : 'Palatino', serif;
 }

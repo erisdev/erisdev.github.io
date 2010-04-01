@@ -68,7 +68,7 @@
 		</script>
 		
 		<script id="tweet-tmpl" type="text/html">
-			<li id="tweet_{%= id %}">
+			<li id="tweet_{%= id %}" class="tweet">
 				{%= autolink(text) %}
 				(<a href="http://twitter.com/{%= user.screen_name %}/status/{%= id %}">view</a>)
 			</li>
@@ -94,10 +94,10 @@
 			</ul>
 			
 			<!-- begin overview -->
-			<div id="overview">
+			<div id="overview" class="ui-helper-clearfix">
 				<h2>overview</h2>
 				
-				<div class="column">
+				<div class="column" id="overview-profile">
 					<h3>profile</h3>
 					<div class="profile">
 						<a href="http://github.com/erisdiscord/">my github profile</a>
@@ -108,8 +108,8 @@
 						<li><a href="http://github.com/erisdiscord/repositories/">repositories</a></li>
 					</ul>
 				</div>
-					
-				<div class="column">
+				
+				<div class="column" id="overview-twitter">
 					<h3>twitter</h3>
 					<ul class="twitter">
 					</ul>
@@ -123,5 +123,9 @@
 			
 		</div>
 		
+		<div id="credits" class="ui-widget ui-widget-content ui-corner-all">
+			<p>Powered by <a href="http://ui.jquery.com/">jQuery UI</a> with Dot Luv.</p>
+			<p>Gist colors based on <a href="http://github.com/mkdynamic">Mark Dodwell</a>'s <a href="http://mkdynamic.wordpress.com/2006/11/13/textmate-theme-cool-glow/">Cool Glow</a> TextMate theme, used with permission.</p>
+		</div>
 	</body>
 </html>
