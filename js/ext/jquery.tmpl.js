@@ -151,11 +151,11 @@
 					// put back protected quotes
 					.split("\t").join("'")
 					// convert inline expressions into inline parameters
-					.replace(/{%=(.+?)%}/g, "',($1),'")
+					.replace(/<%=(.+?)%>/g, "',($1),'")
 					// convert start of code blocks into end of push()
-					.split("{%").join("');")
+					.split("<%").join("');")
 					// and end of code blocks into start of push()
-					.split("%}").join("_.push('")
+					.split("%>").join("_.push('")
 
 				+ "');}}return $(_.join('')).get();");
 

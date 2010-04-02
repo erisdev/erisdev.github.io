@@ -1,0 +1,10 @@
+---
+auto: true
+markdown: rdiscount
+pygments: false
+permalink: /blog/:title
+twitter:
+  user: 'erisdev'
+  limit: 10
+github:
+  user: 'erisdiscord'
