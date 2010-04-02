@@ -15,9 +15,8 @@ h2 {
 	text-align : right;
 }
 
-* + h3 {
-	margin-top : 2em;
-}
+*  + h3 { margin-top : 2em  }
+h2 + h3 { margin-top : auto }
 
 .column {
 	float : left;
