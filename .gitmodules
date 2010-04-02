@@ -1,0 +1,3 @@
+[submodule "gosu-tmx"]
+	path = gosu-tmx
+	url = git@github.com:erisdiscord/gosu-tmx.git
