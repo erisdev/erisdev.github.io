@@ -2,12 +2,15 @@ $(function() {
 	$('#sections').tabs({
 		cache: true,
 		spinner: $('#spinner-tmpl').text()
-	}).bind('tabsload', function(event, ui) {
-		$(ui.panel).find('a.gist-link').each(function(i, link) {
+	});
+	
+	$('p > a[href^=http://gist.github.com/]:only-child').livequery(function() {
+		$(this).each(function(i, link) {
 			var match = $(link).attr('href').match(/^http:\/\/gist\.github\.com\/(\d+)$/i);
+			if (!match) return;
 			GitHub.call('gist:' + match[1], function(data) {
-				$(link).replaceWith(data.div);
-			})
+				$(link).parent().replaceWith(data.div);
+			});
 		});
 	});
 	
