@@ -29,7 +29,7 @@ h2 + h3 { margin-top : auto }
 	float  : left;
 }
 
-.twitter {
+.twitter ul {
 	overflow : auto;
 	max-height : 200px;
 }
