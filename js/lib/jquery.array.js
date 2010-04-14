@@ -47,7 +47,6 @@
       else
         results[section] = [ obj ];
     });
-    console.log(results);
     return results;
   }
   

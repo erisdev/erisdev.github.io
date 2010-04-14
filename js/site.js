@@ -8,7 +8,6 @@ $(function() {
 		var $el = $(el), name = $el.attr('data-name'), text = $el.text();
 		TEMPLATES[name] = _.template(text);
 	});
-	console.log(TEMPLATES.repositories)
 	
 	$('#sections').tabs({
 		cache: true,
