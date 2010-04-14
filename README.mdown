@@ -1,0 +1,17 @@
+# README
+
+It's me, except a web site. Pretty neat, huh? Feel free to use, abuse, misuse, mix, match, borrow or steal any code, markup or CSS you find here.
+
+Everything is made by me except for the following:
+
+    css/gist.css
+    js/ext/*
+    themes/*
+
+## Gist Colors
+
+These colors were shamelessly ripped from Mark Dodwell's Cool [Glow TextMate theme][COOL].
+
+Have a look at the original, of course—it looks much better than this.
+
+[COOL]: http://mkdynamic.wordpress.com/2006/11/13/textmate-theme-cool-glow/
