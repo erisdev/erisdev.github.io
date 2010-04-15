@@ -3,6 +3,7 @@ title: about me
 
 ---
 ## about me
+### introduction
 
 I'm a hobbyist programmer with a particular affection for Ruby, Smalltalk and their kin. I can also write C in a pinch.
 
