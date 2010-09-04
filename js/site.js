@@ -14,11 +14,11 @@ $(function() {
 		spinner: 'Loading...'
 	});
 	
-	$('p > a[href^=http://gist.github.com/]:only-child').livequery(function() {
+	$('gist').livequery(function() {
 		$(this).each(function(i, link) {
-			var $link = $(link), match = $(link).attr('href').match(/^http:\/\/gist\.github\.com\/(\d+)$/i);
-			if (!match) return;
-			GitHub.call('gist:' + match[1], function(data) {
+			var $link = $(link), id = $link.attr('idref');
+			if (!id) return;
+			GitHub.call('gist:' + id, function(data) {
 				$link.parent().replaceWith(data.div);
 			});
 		});
