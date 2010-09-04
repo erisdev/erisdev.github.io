@@ -4,3 +4,6 @@
 [submodule "jquery-github"]
 	path = jquery-github
 	url = git@github.com:erisdiscord/jquery-github.git
+[submodule "gosu-ring"]
+	path = gosu-ring
+	url = git@github.com:erisdiscord/gosu-ring.git
