@@ -19,7 +19,7 @@ $(function() {
 			var $link = $(link), id = $link.attr('idref');
 			if (!id) return;
 			GitHub.call('gist:' + id, function(data) {
-				$link.parent().replaceWith(data.div);
+				$link.replaceWith(data.div);
 			});
 		});
 	});
