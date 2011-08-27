@@ -2,6 +2,7 @@ $(function() {
 	var $projectsMenu = $();
 	
 	$('a.menu').click(function(event) {
+		$('a.menu').not(this).parent('li').removeClass('open');
 		$(this).parent('li').toggleClass('open');
 		return false;
 	});
