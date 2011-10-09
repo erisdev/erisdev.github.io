@@ -1,6 +1,4 @@
 ---
 auto: true
-markdown: rdiscount
-pygments: false
 permalink: /articles/:title
 title: erisdev
