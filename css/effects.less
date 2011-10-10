@@ -1,0 +1,48 @@
+.fx-background-gradient(@from, @to) {
+  background-image : -khtml-gradient(linear, center top, center bottom, from(@from), to(@to));
+  background-image : -moz-linear-gradient(top, @from, @to);
+  background-image : -ms-linear-gradient(top, @from, @to);
+  background-image : -o-linear-gradient(top, @from, @to);
+  background-image : -webkit-gradient(linear, center top, center bottom, from(@from), to(@to));
+  background-image : linear-gradient(top, @from, @to);
+}
+
+.fx-round-all(@radius) {
+  -moz-border-radius : @radius;
+  -webkit-border-radius : @radius;
+  border-radius : @radius;
+}
+
+.fx-round-top-left(@radius) {
+  -moz-border-radius-topleft : @radius;
+  -webkit-border-top-left-radius : @radius;
+  border-top-left-radius : @radius;
+}
+
+.fx-round-top-right(@radius) {
+  -moz-border-radius-topright : @radius;
+  -webkit-border-top-right-radius : @radius;
+  border-top-right-radius : @radius;
+}
+
+.fx-round-bottom-right(@radius) {
+  -moz-border-radius-bottomright : @radius;
+  -webkit-border-bottom-right-radius : @radius;
+  border-bottom-right-radius : @radius;
+}
+
+.fx-round-bottom-left(@radius) {
+  -moz-border-radius-bottomleft : @radius;
+  -webkit-border-bottom-left-radius : @radius;
+  border-bottom-left-radius : @radius;
+}
+
+.fx-round-top(@radius) {
+  .fx-round-top-left(@radius);
+  .fx-round-top-right(@radius);
+}
+
+.fx-round-bottom(@radius) {
+  .fx-round-bottom-left(@radius);
+  .fx-round-bottom-right(@radius);
+}
