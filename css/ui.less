@@ -1,0 +1,44 @@
+@import "colors";
+@import "effects";
+
+.ui-base {
+  color : @ui-text-color;
+  
+  font-family     : 'Helvetica', sans-serif;
+  font-size       : large;
+  text-decoration : none;
+}
+
+.ui-menu-bar {
+  .ui-base;
+  .fx-background-gradient(lighten(@ui-background-color, 10), darken(@ui-background-color, 10));
+  .fx-round-top(5px);
+  
+  display : block;
+  margin  : 0;
+  padding : 0.5em 1em;
+  
+  .ui-menu-title, .ui-menu-item {
+    display : inline-block;
+    margin  : 0 1em 0 0;
+    
+    font-size : inherit;
+  }
+}
+
+.ui-menu {
+  // TODO finish styling this when it's needed
+}
+
+.ui-menu-item {
+  .ui-base;
+  
+  &:link, &:visited, &:hover, & {
+    text-decoration : inherit;
+    color : @ui-text-color;
+  }
+  
+  &:hover {
+    text-shadow : 1px 1px @ui-text-shadow;
+  }
+}
