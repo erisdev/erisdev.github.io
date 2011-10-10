@@ -1,7 +1,14 @@
 @import "colors";
 @import "effects";
 
+@ui-vertical-padding: 0.5em;
+@ui-horizontal-padding: 1em;
+
 .ui-base {
+  display : block;
+  margin  : 0;
+  padding : @ui-vertical-padding @ui-horizontal-padding;
+  
   color : @ui-text-color;
   
   font-family     : 'Helvetica', sans-serif;
@@ -14,13 +21,10 @@
   .fx-background-gradient(lighten(@ui-background-color, 10), darken(@ui-background-color, 10));
   .fx-round-top(5px);
   
-  display : block;
-  margin  : 0;
-  padding : 0.5em 1em;
-  
   .ui-menu-title, .ui-menu-item {
     display : inline-block;
-    margin  : 0 1em 0 0;
+    margin  : -@ui-vertical-padding 0;
+    padding : @ui-vertical-padding @ui-horizontal-padding / 2;
     
     font-size : inherit;
   }
@@ -31,14 +35,13 @@
 }
 
 .ui-menu-item {
-  .ui-base;
-  
   &:link, &:visited, &:hover, & {
     text-decoration : inherit;
+    text-shadow : 1px 1px @ui-text-shadow;
     color : @ui-text-color;
   }
   
   &:hover {
-    text-shadow : 1px 1px @ui-text-shadow;
+    .fx-background-gradient(lighten(@ui-highlight-color, 10), darken(@ui-highlight-color, 10));
   }
 }
