@@ -10,6 +10,14 @@ body {
   margin    : auto;
   min-width : 10 * 37px; // the most arbitrary number
   max-width : 10 * 70px; // the smallest weird number
+  
+  & > footer {
+    padding  : 0.5em 1em;
+    overflow : hidden;
+    
+    background-color : @background-color;
+    color : @text-color;
+  }
 }
 
 #main {
