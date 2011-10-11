@@ -5,3 +5,7 @@ rdiscount:
   extensions: [smart]
 permalink: /articles/:title
 title: erisdev
+url: http://erisdiscord.github.com
+me:
+  name: Eris
+  email: eris.discord@gmail.com
