@@ -34,7 +34,6 @@
     
     var defaults = {
         live: true,
-        set_title: true,
         format_future: true,
         format_past: true,
         units: [
@@ -280,7 +279,7 @@
     // Returns a date object for the date represented by the given DOM element
     // from the following sources (in order):
     //     1) element.data("easydate.date") (in case we previously cached it)
-    //     2) DOM element's title (if it is a valid RFC 1123 timestamp)
+    //     2) DOM element's datetime (if it is a valid RFC 1123 timestamp)
     //     3) DOM element's innerHTML (if it is a valid RFC 1123 timestamp)
     function get_date(element, settings)
     {
@@ -289,15 +288,15 @@
         if(isNaN(date))
         {
             var timestamp;
-            var time = Date.parse(timestamp = element.attr("title")) ||
+            var time = Date.parse(timestamp = element.attr("datetime")) ||
                        Date.parse(timestamp = element.html());
             if(!isNaN(time))
             {
                 date = new Date();
                 date.setTime(time);
                 element.data("easydate.date", date);
-                if(settings.set_title && !element.attr("title"))
-                    element.attr("title", timestamp);
+                if(!element.attr("datetime"))
+                    element.attr("datetime", timestamp);
             }
         }
         
