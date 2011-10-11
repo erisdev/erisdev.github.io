@@ -41,6 +41,10 @@
     color : @ui-text-color;
   }
   
+  &.here {
+    .fx-background-gradient(lighten(@ui-active-color, 10), darken(@ui-active-color, 10));
+  }
+  
   &:hover {
     .fx-background-gradient(lighten(@ui-highlight-color, 10), darken(@ui-highlight-color, 10));
   }
