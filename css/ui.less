@@ -4,6 +4,10 @@
 @ui-vertical-padding: 0.5em;
 @ui-horizontal-padding: 1em;
 
+.ui-highlight(@color) {
+  .fx-background-gradient(lighten(@color, 10), darken(@color, 10));
+}
+
 .ui-base {
   display : block;
   margin  : 0;
@@ -18,7 +22,7 @@
 
 .ui-menu-bar {
   .ui-base;
-  .fx-background-gradient(lighten(@ui-background-color, 10), darken(@ui-background-color, 10));
+  .ui-highlight(@ui-background-color);
   .fx-round-top(5px);
   
   .ui-menu-title, .ui-menu-item {
@@ -41,11 +45,6 @@
     color : @ui-text-color;
   }
   
-  &.here {
-    .fx-background-gradient(lighten(@ui-active-color, 10), darken(@ui-active-color, 10));
-  }
-  
-  &:hover {
-    .fx-background-gradient(lighten(@ui-highlight-color, 10), darken(@ui-highlight-color, 10));
-  }
+  &.here  { .ui-highlight(@ui-active-color) }
+  &:hover { .ui-highlight(@ui-highlight-color) }
 }
