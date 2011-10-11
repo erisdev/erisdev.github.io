@@ -14,6 +14,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<script type="text/javascript" src="/js/libs/jquery-1.6.2.js"></script>
+		<script type="text/javascript" src="/js/libs/jquery.easydate-0.2.4.js"></script>
 		<script type="text/javascript" src="/js/libs/modernizr-2.0.6.min.js"></script>
 		<script type="text/javascript" src="/js/plugins.js"></script>
 		<script type="text/javascript" src="/js/script.js"></script>
@@ -40,7 +41,7 @@
 				{{ content }}
 			</div>
 			<footer>
-				Last updated {{ site.time }}
+				Last updated <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time }}</time>.
 			</footer>
 		</div> <!--! end of #container -->
 	</body>

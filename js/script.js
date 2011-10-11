@@ -11,6 +11,8 @@
       if ( naiveUriCompare(location.href, el.href) )
         $(el).addClass('here');
     });
+    
+    $('time').easydate();
   });
 
 })()
