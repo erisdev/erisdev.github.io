@@ -9,7 +9,7 @@
   $(function() {
     $('a[href]').each(function(i, el) {
       if ( naiveUriCompare(location.href, el.href) )
-        $(el).addClass('here');
+        $(el).addClass('here').click(function(event) { event.preventDefault() });
     });
     
     $('time').easydate();

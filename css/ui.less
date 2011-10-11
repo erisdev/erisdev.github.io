@@ -45,6 +45,6 @@
     color : @ui-text-color;
   }
   
-  &.here  { .ui-highlight(@ui-active-color) }
-  &:hover { .ui-highlight(@ui-highlight-color) }
+  &.here, &.here:hover  { .ui-highlight(@ui-active-color) }
+  &:hover               { .ui-highlight(@ui-highlight-color) }
 }
