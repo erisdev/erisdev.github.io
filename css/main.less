@@ -2,10 +2,17 @@
 @import "ui";
 @import "post";
 
+.reset() {
+  margin  : 0;
+  padding : 0;
+}
+
 body {
   padding : 10px;
   background-color : black;
 }
+
+h1, h2, h3, h4, h5, h6 { .reset }
 
 :link.here, :visited.here {
   cursor : default;

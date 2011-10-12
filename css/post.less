@@ -1,10 +1,27 @@
-ul.post-tags {
-  margin  : 0;
-  padding : 0;
+.post-meta {
+  overflow : hidden;
   
-  list-style : none;
+  border-bottom : 1px solid black;
   
-  li.post-tag {
-    display : inline-block;
+  font-size : 0.8em;
+  
+  .post-title {
+    float : right;
+    
+    text-align : right;
+    font-size  : 2em;
+  }
+  
+  ul.post-tags {
+    margin  : 0;
+    padding : 0;
+    
+    list-style : none;
+    
+    &:empty { display : none }
+    
+    li.post-tag {
+      display : inline-block;
+    }
   }
 }
