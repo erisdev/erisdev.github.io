@@ -1,6 +1,7 @@
 ---
 title: Hello, World!
 layout: post
+tags: news filler
 ---
 First post! The post that hurts the most. Consider this a placeholder for _real_ content. 
 

@@ -7,7 +7,7 @@
   }
 
   $(function() {
-    $('a[href]').each(function(i, el) {
+    $('.ui-menu-bar a[href]').each(function(i, el) {
       if ( naiveUriCompare(location.href, el.href) )
         $(el).addClass('here').click(function(event) { event.preventDefault() });
     });
