@@ -6,7 +6,19 @@
     return a === b;
   }
 
+  function highlightUriTarget() {
+    $('.uri-target').removeClass('uri-target');
+    if ( location.hash )
+      $(location.hash.replace(/([^#a-z0-9])/g, '\\$1')).addClass('uri-target');
+  }
+
   $(function() {
+    highlightUriTarget();
+    
+    $(window).bind('hashchange', function(event) {
+      highlightUriTarget();
+    });
+    
     $('.ui-menu-bar a[href]').each(function(i, el) {
       if ( naiveUriCompare(location.href, el.href) )
         $(el).addClass('here').click(function(event) { event.preventDefault() });
