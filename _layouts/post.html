@@ -4,7 +4,7 @@ layout: default
 <article class="post">
 	<header class="post-meta">
 		<h1 class="post-title">{{ page.title }}</h1>
-		<time class="post-date" pubdate datetime="{{ page.date | date_to_xmlschema }}">{{ page.date }}</time>
+		<time class="post-date datetime-relative datetime-date-only" pubdate datetime="{{ page.date | date_to_xmlschema }}">{{ page.date }}</time>
 		<ul class="post-tags">
 			{% for tag in page.tags %}
 				<li class="post-tag">{{ tag }}</li>

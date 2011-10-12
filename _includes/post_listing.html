@@ -1,4 +1,4 @@
 <li class="post-listing">
 	<a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
-	<time class="post-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date }}</time>
+	<time class="post-time datetime-relative datetime-date-only" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date }}</time>
 </li>
