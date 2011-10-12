@@ -1,13 +1,22 @@
 ---
+title: Tags
 layout: default
 permalink: /tags/
 ---
+<h1>Tags</h1>
+
+<nav>
+	{% for tag in site.tags %}
+		<a class="tag" data-size="{{ tag[1] | size }}" href="#tag:{{ tag[0] }}">{{ tag[0] }}</a>
+	{% endfor %}
+</nav>
+
 {% for tag in site.tags %}
 	{% assign tag_name = tag[0] %}
 	{% assign tag_posts = tag[1] %}
-	<section class="tag-listing">
-		<h1>{{ tag_name }}</h1>
-		<ul>
+	<section class="tag-listing" id="tag:{{ tag_name | replace:' ','-' }}">
+		<h1 class="tag-name">{{ tag_name }}</h1>
+		<ul class="tag-contents">
 			{% for post in tag_posts %}
 				{% include post_listing.html %}
 			{% endfor %}
