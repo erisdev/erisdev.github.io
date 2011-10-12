@@ -1,5 +1,15 @@
 ---
 layout: default
 ---
-<!-- TODO actual layout -->
-{{ content }}
+<article class="post">
+	<h1 class="post-title">{{ page.title }}</h1>
+	<time class="post-date" pubdate datetime="{{ post.date | date_to_xmlschema }}">{{ page.date }}</time>
+	<ul class="post-tags">
+		{% for tag in page.tags %}
+			<li class="post-tag">{{ tag }}</li>
+		{% endfor %}
+	</ul>
+	<section class="post-content">
+		{{ content }}
+	</section>
+</article>

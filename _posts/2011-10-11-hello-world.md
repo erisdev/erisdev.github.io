@@ -1,8 +1,7 @@
 ---
+title: Hello, World!
 layout: post
 ---
-# Hello, World!
-
 First post! The post that hurts the most. Consider this a placeholder for _real_ content. 
 
 In the future, posts (articles?) will have a list of tags, timestamps, some stuff and a thing. Possibly related links and anything else _super neat_ that I can integrate. Twitter links! Embedded media! Everything that's good!
