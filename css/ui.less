@@ -29,13 +29,15 @@
   overflow-y  : hidden;
   white-space : nowrap;
   
-  .ui-menu-title, .ui-menu-item {
+  .ui-menu-title, .ui-menu-item, .ui-menu-divider {
     display : inline-block;
     margin  : -@ui-vertical-padding 0;
     padding : @ui-vertical-padding @ui-horizontal-padding / 2;
     
     font-size : inherit;
   }
+  
+  .ui-menu-divider:before { content : '\2725' }
 }
 
 .ui-menu {
