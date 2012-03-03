@@ -20,9 +20,10 @@ Screen shots come later! For now, here's a screen shot of mockup.html in Safari.
 </div>
 
 ## Download
-Download the latest version, [Gentle Glow 1.5.0][download], or get the [source code][source] at GitHub.
+Download the latest version, [Gentle Glow 1.5.1][download], or get the [source code][source] at GitHub.
 
 ### Older Versions
+* [1.5.0](http://dl.dropbox.com/u/143504/Themes/GentleGlow-1.5.0.tar.bz2)
 * [1.4.1](http://dl.dropbox.com/u/143504/Themes/GentleGlow-1.4.1.tar.bz2)
 * [1.4.0](http://dl.dropbox.com/u/143504/Themes/GentleGlow-1.4.0.tar.bz2)
 * [1.3.1](http://dl.dropbox.com/u/143504/Themes/GentleGlow-1.3.1.tar.bz2)
