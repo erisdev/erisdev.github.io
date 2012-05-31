@@ -2,6 +2,7 @@
 layout: page
 title: Gentle Glow
 description: Adium message style with cute & unseemly JavaScript magic. It's a thing.
+group: projects
 permalink: ./
 ---
 {% include JB/setup %}
