@@ -19,30 +19,26 @@ There's also built-in support for [Embed.ly][embedly], but it requires an API ke
 
 As always, you can download the [latest version][download], or check out the [source code][source] from GitHub.
 
+---
 # News & Releases
-<div style="float: left">
-  {% for release in gg_releases limit:gg_release_limit %}
-    <h2>{{release.title}}</h2>
-    <article>
-      {{ release.content }}
-    </article>
-  {% endfor %}
-</div>
 
-<div style="float: right">
-  <h2>Older news</h2>
-  {% for release in gg_releases offset:gg_release_limit %}
-    <li>
-      <a href="{{ release.url }}">{{ release.title }}</a>
-      {% if release.version %}[{{ release.version }}]{% endif %}
-      {% if release.description %}{{ release.dscription }}{% endif %}
-    </li>
-  {% endfor %}
+{% for release in gg_releases limit:gg_release_limit %}
+  <h2>{{release.title}}</h2>
+  <article>
+    {{ release.content }}
+  </article>
+{% endfor %}
+
+## Older news
+{% for release in gg_releases offset:gg_release_limit %}
+  <li>
+    <a href="{{ release.url }}">{{ release.title }}</a>
+    {% if release.version %}[{{ release.version }}]{% endif %}
+    {% if release.description %}{{ release.dscription }}{% endif %}
+  </li>
+{% endfor %}
   
-  <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ gg_category }}-ref">more…</a>
-</div>
-
-<br style="clear: both">
+[more…]({{ BASE_PATH }}{{ site.JB.categories_path }}#{{ gg_category }}-ref)
 
 # License
 License is [CC-BY-NC-SA][].
