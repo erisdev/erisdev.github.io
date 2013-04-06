@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>erisdev@github</title>
+    
+    <style type="text/css">
+      @import url("stylesheets/reset.css");
+      
+      body {
+        margin: 150px 0 0 0;
+        font-family: "Courier New", "Courier", monospace;
+        background: #130099;
+        color: #f0f4fd;
+      }
+      
+      :link,
+      :visited {
+        color: inherit;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      
+      :link:hover,
+      :visited:hover {
+        text-decoration: underline;
+      }
+      
+      .box {
+        width: 600px;
+        max-width: 75%;
+        margin: 0 auto;
+        font-size: 16px;
+      }
+      
+      .nav > * {
+        position: relative;
+        margin-left: 2em;
+      }
+      
+      .nav > *:before {
+        position: absolute;
+        left: -1em;
+        content: '* ';
+      }
+      
+      #title {
+        display: inline;
+        background: #f0f4fd;
+        color: #130099;
+      }
+      
+      #box1,
+      #box4 {
+        text-align: center;
+      }
+      
+      #box3 {
+        margin: 16px auto;
+      }
+    </style>
+    
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        function valueRotator(element) {
+          var padding = element.textContent.replace(/./g, '0');
+          var length = padding.length;
+          var max = Math.pow(2, length * 4);
+          
+          var times = length * 16;
+          
+          return function rotateValue() {
+            var x = Math.floor(Math.random() * max);
+            element.textContent = ('' + padding + x.toString(16).toUpperCase()).substr(-length);
+            if (--times) {
+              setTimeout(rotateValue, 1000 * Math.log(1 + 1 / times))
+            }
+          }
+        }
+        
+        function blinker(element) {
+          var flag = true;
+          return function blink() {
+            element.style.visibility = flag ? 'visible' : 'hidden';
+            flag = !flag;
+          }
+        }
+        
+        var nodes = document.querySelectorAll('.hex');
+        for (var i = 0, len = nodes.length; i < len; ++i) {
+          setTimeout(valueRotator(nodes[i]), 0);
+        }
+        
+        setInterval(blinker(document.querySelector('.cursor')), 300);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="box1" class="box">
+      <h1 id="title">erisdev</h1>
+    </div>
+    <div id="box2" class="box">
+      A minor embuggerance <span class="hex">FF</span> has occurred at <span class="hex">BAAD</span>:<span class="hex">DEADC0DE</span><br/>
+      the current application will be moderately inconvenienced.
+    </div>
+    <ul id="box3" class="box nav">
+      <li>Check out <a href="https://github.com/erisdiscord">my GitHub profile</a> for great justice.</li>
+      <li>Follow <a href="http://twitter.com/erisdev">me on Twitter</a> if you really want to.</li>
+      <li>Download <a href="http://erisdiscord.github.io/rizcraft">Rizcraft</a>, my unfinished texture pack for Minecraft 1.5+.</li>
+      <li>Drop me a line at &lt;<a href="mailto:eris.discord@gmail.com">eris.discord@gmail.com</a>&gt;.</li>
+      <li>Press BACK to get the heck outta dodge.<br/>
+          You aren't likely to lose anything.</li>
+    </ul>
+    
+    <div id="box4" class="box">Press any key to continue,<br/>
+      or better yet, don't<span class="cursor">_</span></div>
+  </body>
+</html>
