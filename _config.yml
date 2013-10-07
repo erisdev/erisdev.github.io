@@ -1,0 +1,3 @@
+---
+rdiscount:
+  extensions: [smart]
