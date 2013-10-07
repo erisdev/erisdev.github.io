@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Rizcraft</title>
+ <link href="http://vidius.github.io/rizcraft/atom.xml" rel="self"/>
+ <link href="http://vidius.github.io/rizcraft"/>
+ <updated>2013-10-07T18:00:00-04:00</updated>
+ <id>http://vidius.github.io/rizcraft</id>
+ <author>
+   <name>Eris</name>
+   <email>eris.discord@gmail.com</email>
+ </author>
+ 
+ <entry>
+   <title>[NOTICE] Rizcraft has moved!</title>
+   <link href="http://vidius.github.io/rizcraft"/>
+   <updated>2013-10-07T18:00:00-04:00</updated>
+   <id>MOVEDMOVEDMOVEDMOVEDMOVEDMOVED</id>
+   <content type="html">&lt;p&gt;Rizcraft has moved.&lt;/p&gt;</content>
+ </entry>
+ 
+</feed>

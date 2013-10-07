@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>{{page.title}}</title>
+
+    <link rel="canonical" href="{{page.redirect}}">
+
+    <script type="text/javascript">
+      setTimeout(function() {
+        location.replace('{{page.redirect}}');
+      }, 10000);
+    </script>
+
+    <style type="text/css">
+      .moved {
+        margin: 100px auto auto auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="moved">
+      <h1><a href="{{redirect}}">{{page.title}}</a></h1>
+      {{content}}
+    </div>
+  </body>
+</html>
