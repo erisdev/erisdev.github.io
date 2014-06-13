@@ -15,7 +15,7 @@
     <!-- page metadata -->
     <meta property="og:url" content="http://erisdiscord.github.io/">
     <meta property="og:title" content="erisdev@github">
-    <meta property="og:description" content="&#x261E; Please find enclosed the creative endeavours of @erisdev. Inquire Within.">
+    <meta property="og:description" content="&#x261E; Please find enclosed the creative endeavours of @erisdev. Inquire Within. This product is not endorsed by Zed Shaw.">
     
     <title>erisdev@github</title>
     
@@ -65,18 +65,19 @@
         color: #130099;
       }
       
-      #box1,
-      #box4 {
+      #square,
+      #not-a-triangle {
         text-align: center;
       }
       
-      #box3 {
+      #parallelogram {
         margin: 16px auto;
       }
     </style>
     
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
+        // FIXME Zed A. Shaw says this is inefficient
         function valueRotator(element) {
           var padding = element.textContent.replace(/./g, '0');
           var length = padding.length;
@@ -93,6 +94,7 @@
           }
         }
         
+        // XXX should have just used a blink tag? but what about IE?
         function blinker(element) {
           var flag = true;
           return function blink() {
@@ -111,24 +113,24 @@
     </script>
   </head>
   <body>
-    <div id="box1" class="box">
+    <div id="square" class="box">
       <h1 id="title">erisdev</h1>
     </div>
-    <div id="box2" class="box">
+    <div id="parallelogram" class="box">
       A minor embuggerance <span class="hex">FF</span> has occurred at <span class="hex">BAAD</span>:<span class="hex">DEADC0DE</span><br/>
       the current application will be moderately inconvenienced.
     </div>
-    <ul id="box3" class="box nav">
+    <ul id="rhombozoid" class="box nav">
       <li>Check out <a href="https://github.com/erisdiscord">my GitHub profile</a> for great justice.</li>
       <li>Follow <a href="http://twitter.com/erisdev">me on Twitter</a> if you really want to.</li>
       <li>Download <a href="http://vidius.github.io/rizcraft">Rizcraft</a>, my unfinished texture pack for Minecraft 1.5+.</li>
       <li>Try <a href="http://erisdiscord.github.io/steve.js">steve.js</a>, a Minecraft skin viewer built on <a href="http://threejs.org">three.js</a>.</li>
-      <li>Drop me a line at &lt;<a href="mailto:eris.discord@gmail.com">eris.discord@gmail.com</a>&gt;.</li>
+      <li>Direct all complaints about my ugly web site to &lt;<a href="mailto:eris.discord@gmail.com">eris.discord@gmail.com</a>&gt;.</li>
       <li>Press BACK to get the heck outta dodge.<br/>
           You aren't likely to lose anything.</li>
     </ul>
     
-    <div id="box4" class="box">Press any key to continue,<br/>
+    <div id="not-a-triangle" class="box">Press any key to continue,<br/>
       or better yet, don't<span class="cursor">_</span></div>
   </body>
 </html>
