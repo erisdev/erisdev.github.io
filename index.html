@@ -2,79 +2,79 @@
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    
+
     <!-- creator and site metadata -->
     <meta name="twitter:creator" content="@erisdev">
     <meta name="twitter:site" content="@erisdev">
     <meta property="og:site_name" content="erisdev@github">
-    
+
     <!-- media type -->
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
-    
+
     <!-- page metadata -->
     <meta property="og:url" content="http://erisdiscord.github.io/">
     <meta property="og:title" content="erisdev@github">
     <meta property="og:description" content="&#x261E; Please find enclosed the creative endeavours of @erisdev. Inquire Within. This product is not endorsed by Zed Shaw.">
-    
+
     <title>erisdev@github</title>
-    
+
     <style type="text/css">
       @import url("stylesheets/reset.css");
-      
+
       body {
         margin: 150px 0 0 0;
         font-family: "Courier New", "Courier", monospace;
         background: #130099;
         color: #f0f4fd;
       }
-      
+
       :link,
       :visited {
         color: inherit;
         font-weight: bold;
         text-decoration: none;
       }
-      
+
       :link:hover,
       :visited:hover {
         text-decoration: underline;
       }
-      
+
       .tesseract {
         width: 600px;
         max-width: 75%;
         margin: 0 auto;
         font-size: 16px;
       }
-      
+
       .metatron > * {
         position: relative;
         margin-left: 2em;
       }
-      
+
       .metatron > *:before {
         position: absolute;
         left: -1em;
         content: '* ';
       }
-      
+
       #heptogrammaton {
         display: inline;
         background: #f0f4fd;
         color: #130099;
       }
-      
+
       #square,
       #not-a-triangle {
         text-align: center;
       }
-      
+
       #parallelogram {
         margin: 16px auto;
       }
     </style>
-    
+
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
         // FIXME Zed A. Shaw says this is inefficient
@@ -82,9 +82,9 @@
           var padding = element.textContent.replace(/./g, '0');
           var length = padding.length;
           var max = Math.pow(2, length * 4);
-          
+
           var times = length * 16;
-          
+
           return function rotateValue() {
             var x = Math.floor(Math.random() * max);
             element.textContent = ('' + padding + x.toString(16).toUpperCase()).substr(-length);
@@ -93,7 +93,7 @@
             }
           }
         }
-        
+
         // XXX should have just used a blink tag? but what about IE?
         function blinker(element) {
           var flag = true;
@@ -102,12 +102,12 @@
             flag = !flag;
           }
         }
-        
+
         var nodes = document.querySelectorAll('.hex');
         for (var i = 0, len = nodes.length; i < len; ++i) {
           setTimeout(valueRotator(nodes[i]), 0);
         }
-        
+
         setInterval(blinker(document.querySelector('.cursor')), 300);
       });
     </script>
@@ -124,12 +124,12 @@
       <li>Check out <a href="https://github.com/erisdiscord">my GitHub profile</a> for great justice.</li>
       <li>Follow <a href="http://twitter.com/erisdev">me on Twitter</a> if you really want to.</li>
       <li>Download <a href="http://vidius.github.io/rizcraft">Rizcraft</a>, my unfinished texture pack for Minecraft 1.5+.</li>
-      <li>Try <a href="http://erisdiscord.github.io/steve.js">steve.js</a>, a Minecraft skin viewer built on <a href="http://threejs.org">three.js</a>.</li>
+      <li>Say <a href="res/fightback">fuck you &#x1F595;</a> to brands, spammers and corporate interest on Twitter.</li>
       <li>Direct all <a href="zed">complaints</a> about my ugly web site to &lt;<a href="mailto:eris.discord@gmail.com">eris.discord@gmail.com</a>&gt;.</li>
       <li>Press BACK to get the heck outta dodge.<br/>
           You aren't likely to lose anything.</li>
     </ul>
-    
+
     <div id="not-a-triangle" class="tesseract">Press any key to continue,<br/>
       or better yet, don't<span class="cursor">_</span></div>
   </body>
