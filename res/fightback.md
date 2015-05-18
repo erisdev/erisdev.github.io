@@ -1,7 +1,7 @@
 ---
 layout: basic
 title: fight back
-permalink: /res/fightback
+permalink: /res/fightback/
 ---
 # fight fucking bullshit on twitter
 If there's one thing twitter loves, it's Engaging your Favorite Brands™. twitter is "committed to providing a safe environment for brands to build their business".
