@@ -13,6 +13,15 @@ html {
         +0    0   4px #fff;
 }
 
+blockquote {
+    border: 2px solid #ccc;
+    padding: 1em;
+}
+
+img {
+    max-width: 100%;
+}
+
 a:link,
 a:hover,
 a:visited {
