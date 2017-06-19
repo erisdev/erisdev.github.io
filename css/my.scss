@@ -1,0 +1,158 @@
+---
+---
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans+Condensed:500|Fira+Sans:400,400i");
+
+$body-font:     "Fira Sans", sans-serif;
+$heading-font:  "Fira Sans Condensed", sans-serif;
+$mono-font:     "Fira Mono", monospace;
+
+$passage-link-color:    #ff49ab;
+$external-link-color:   #2da0ff;
+$visited-color:         #7724ff;
+
+@mixin glow-text($color, $glow-color:lighten($color, 20%)) {
+    color: $color;
+    text-shadow:
+        +1px  1px 0   #000,
+        +1px -1px 0   #000,
+        -1px  1px 0   #000,
+        -1px -1px 0   #000,
+        +0    0   4px $glow-color;
+}
+
+body {
+    @include glow-text(#ccc, #fff);
+
+    background: #101;
+
+    font-family: $body-font;
+    font-size: 18px;
+}
+
+a {
+    &:link {
+        @include glow-text($external-link-color);
+        text-decoration: none;
+    }
+
+    &:link:hover {
+        @include glow-text(lighten($external-link-color, 20%));
+        text-decoration: underline;
+    }
+
+    &:visited {
+        @include glow-text($visited-color);
+    }
+
+    &:visited:hover {
+        @include glow-text(lighten($visited-color, 20%));
+    }
+
+    &.passage-link {
+        @include glow-text($passage-link-color);
+        font-style: italic;
+    }
+
+    &.passage-link:hover {
+        @include glow-text(lighten($passage-link-color, 20%));
+    }
+}
+
+code, pre {
+    font-family: $mono-font;
+}
+
+h1, h2 {
+    font-family: $heading-font;
+    text-align: center;
+
+    a:link,
+    a:visited {
+        color: inherit;
+        text-shadow: inherit;
+    }
+}
+
+h1 {
+    @include glow-text(#648);
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+.illustration img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    section {
+        flex: 0 0 256px;
+        font-size: smaller;
+        text-align: center;
+    }
+
+    header {
+        position: relative;
+
+        time {
+            @include glow-text(#808080);
+            position: absolute;
+            bottom: -1em;
+            right: 0;
+            font-size: smaller;
+            line-height: 1em;
+            text-align: right;
+        }
+    }
+}
+
+@keyframes tty-line {
+    from { width: 0 }
+    to   { width: 100% }
+}
+
+@keyframes tty-cursor {
+    from { opacity: 0 }
+    45%  { opacity: 0 }
+    55%  { opacity: 1 }
+    to   { opacity: 1 }
+}
+
+.tty {
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    background: #000;
+    color: #00ff47;
+    font-family: "UW ttyp0", "Fira Mono", monospace;
+    font-size: 18px;
+
+    .line {
+        overflow: hidden;
+        text-overflow: clip;
+        text-overflow: "\2588";
+        white-space: pre;
+        animation: tty-line 200ms linear both;
+    }
+
+    .line:empty:before {
+        content: ' '; // force the line to take up space
+    }
+
+    .cursor:before {
+        content: '\2588';
+        animation: tty-cursor 500ms ease alternate infinite;
+    }
+
+    @for $i from 2 through 25 {
+        .line:nth-child(#{$i}) { animation-delay: $i * 200ms }
+    }
+}
