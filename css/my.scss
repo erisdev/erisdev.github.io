@@ -1,10 +1,10 @@
 ---
 ---
-@import url("https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans+Condensed:500|Fira+Sans:400,400i");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu:400,400i");
 
-$body-font:     "Fira Sans", sans-serif;
-$heading-font:  "Fira Sans Condensed", sans-serif;
-$mono-font:     "Fira Mono", monospace;
+$body-font:     "Ubuntu", sans-serif;
+$heading-font:  "Ubuntu Condensed", sans-serif;
+$mono-font:     "Ubuntu Mono", monospace;
 
 $passage-link-color:    #ff49ab;
 $external-link-color:   #2da0ff;
@@ -134,7 +134,7 @@ h2 {
     border-radius: 1em;
     background: #000;
     color: #00ff47;
-    font-family: "UW ttyp0", "Fira Mono", monospace;
+    font-family: $mono-font;
     font-size: 18px;
 
     .line {
