@@ -1,2 +1,4 @@
+safe: true
+incremental: true
 plugins:
 - jekyll-sass-converter
