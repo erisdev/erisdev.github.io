@@ -2,3 +2,6 @@ safe: true
 incremental: true
 plugins:
 - jekyll-sass-converter
+
+title: possum.zone
+permalink: /:categories/:year/:month/:day/:title

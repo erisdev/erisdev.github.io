@@ -1,0 +1,9 @@
+<section>
+    <header>
+        <a href="{{include.url}}"><h2>{{include.title}}</h2></a>
+        {% if include.date -%}
+        <time datetime="{{include.date}}">{{include.date | date_to_string}}</time>
+        {%- endif %}
+    </header>
+    {{include.desc | markdownify}}
+</section>
