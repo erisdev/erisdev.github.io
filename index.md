@@ -3,7 +3,7 @@ id: workshop
 ---
 you're standing in my workshop. and by workshop i mean a derelict interplanetary transport that's been roughly divided into living & working areas. the space is claustrophilic. packed, but not cramped.
 
-there's a [big critter][eris] standing by the airlock.. hey, that's me!
+there's a [big critter][riley] standing by the airlock.. hey, that's me!
 
 the walls are covered floor to ceiling with [drawings][], blueprints and [a bigass tool rack][tool rack].
 
